@@ -42,4 +42,14 @@ public class Remove {
     public void setRdate(Date rdate) {
         this.rdate = rdate;
     }
+
+    @Override
+    public String toString() {
+        return "Remove{" +
+                "removeid=" + removeid +
+                ", id=" + id +
+                ", rmethod='" + rmethod + '\'' +
+                ", rdate=" + rdate +
+                '}';
+    }
 }

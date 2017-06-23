@@ -30,4 +30,13 @@ public class Administrator {
     public void setType(Integer type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Administrator{" +
+                "adminid=" + adminid +
+                ", password='" + password + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

@@ -62,4 +62,16 @@ public class Attendance {
     public void setIsovertime(Integer isovertime) {
         this.isovertime = isovertime;
     }
+
+    @Override
+    public String toString() {
+        return "Attendance{" +
+                "attid=" + attid +
+                ", id=" + id +
+                ", attdate=" + attdate +
+                ", workhours=" + workhours +
+                ", closingtime=" + closingtime +
+                ", isovertime=" + isovertime +
+                '}';
+    }
 }

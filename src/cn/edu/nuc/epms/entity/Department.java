@@ -30,4 +30,13 @@ public class Department {
     public void setEid(Integer eid) {
         this.eid = eid;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "eno=" + eno +
+                ", dname='" + dname + '\'' +
+                ", eid=" + eid +
+                '}';
+    }
 }

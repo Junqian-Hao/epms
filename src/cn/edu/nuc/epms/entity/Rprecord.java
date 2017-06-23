@@ -62,4 +62,16 @@ public class Rprecord {
     public void setRpreason(String rpreason) {
         this.rpreason = rpreason == null ? null : rpreason.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Rprecord{" +
+                "rpid=" + rpid +
+                ", id=" + id +
+                ", rptype=" + rptype +
+                ", rpmoney=" + rpmoney +
+                ", rpdate=" + rpdate +
+                ", rpreason='" + rpreason + '\'' +
+                '}';
+    }
 }

@@ -52,4 +52,15 @@ public class Businesstrip {
     public void setBtmessage(String btmessage) {
         this.btmessage = btmessage == null ? null : btmessage.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Businesstrip{" +
+                "id=" + id +
+                ", btid=" + btid +
+                ", btdate=" + btdate +
+                ", registerdate=" + registerdate +
+                ", btmessage='" + btmessage + '\'' +
+                '}';
+    }
 }

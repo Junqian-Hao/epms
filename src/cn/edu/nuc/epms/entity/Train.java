@@ -42,4 +42,14 @@ public class Train {
     public void setTcontent(String tcontent) {
         this.tcontent = tcontent == null ? null : tcontent.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "trainid=" + trainid +
+                ", tstarttime=" + tstarttime +
+                ", tendtime=" + tendtime +
+                ", tcontent='" + tcontent + '\'' +
+                '}';
+    }
 }

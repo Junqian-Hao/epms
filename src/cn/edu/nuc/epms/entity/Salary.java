@@ -62,4 +62,16 @@ public class Salary {
     public void setPaydate(Date paydate) {
         this.paydate = paydate;
     }
+
+    @Override
+    public String toString() {
+        return "Salary{" +
+                "salaryid=" + salaryid +
+                ", id=" + id +
+                ", bassallary=" + bassallary +
+                ", fine=" + fine +
+                ", award=" + award +
+                ", paydate=" + paydate +
+                '}';
+    }
 }

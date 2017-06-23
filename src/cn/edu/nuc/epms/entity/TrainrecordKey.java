@@ -20,4 +20,12 @@ public class TrainrecordKey {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "TrainrecordKey{" +
+                "trainid=" + trainid +
+                ", id=" + id +
+                '}';
+    }
 }

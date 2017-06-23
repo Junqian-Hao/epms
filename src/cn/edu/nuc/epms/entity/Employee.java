@@ -142,4 +142,24 @@ public class Employee {
     public void setContractcontents(String contractcontents) {
         this.contractcontents = contractcontents == null ? null : contractcontents.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", eno=" + eno +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birth=" + birth +
+                ", nation='" + nation + '\'' +
+                ", education='" + education + '\'' +
+                ", duty='" + duty + '\'' +
+                ", domicileplace='" + domicileplace + '\'' +
+                ", politics='" + politics + '\'' +
+                ", physiological='" + physiological + '\'' +
+                ", contractsigningdate=" + contractsigningdate +
+                ", contractexpirationdate=" + contractexpirationdate +
+                ", contractcontents='" + contractcontents + '\'' +
+                '}';
+    }
 }
