@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.epms.mapper.RprecordMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.epms.entity.Rprecord" >
+    <id column="rpid" property="rpid" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="rptype" property="rptype" jdbcType="INTEGER" />
+    <result column="rpmoney" property="rpmoney" jdbcType="REAL" />
+    <result column="rpdate" property="rpdate" jdbcType="DATE" />
+    <result column="rpreason" property="rpreason" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    rpid, id, rptype, rpmoney, rpdate, rpreason
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.nuc.epms.entity.RprecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from rprecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from rprecord
+    where rpid = #{rpid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from rprecord
+    where rpid = #{rpid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.edu.nuc.epms.entity.RprecordExample" >
+    delete from rprecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.epms.entity.Rprecord" >
+    insert into rprecord (rpid, id, rptype, 
+      rpmoney, rpdate, rpreason
+      )
+    values (#{rpid,jdbcType=INTEGER}, #{id,jdbcType=INTEGER}, #{rptype,jdbcType=INTEGER}, 
+      #{rpmoney,jdbcType=REAL}, #{rpdate,jdbcType=DATE}, #{rpreason,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.epms.entity.Rprecord" >
+    insert into rprecord
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rpid != null" >
+        rpid,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="rptype != null" >
+        rptype,
+      </if>
+      <if test="rpmoney != null" >
+        rpmoney,
+      </if>
+      <if test="rpdate != null" >
+        rpdate,
+      </if>
+      <if test="rpreason != null" >
+        rpreason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rpid != null" >
+        #{rpid,jdbcType=INTEGER},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rptype != null" >
+        #{rptype,jdbcType=INTEGER},
+      </if>
+      <if test="rpmoney != null" >
+        #{rpmoney,jdbcType=REAL},
+      </if>
+      <if test="rpdate != null" >
+        #{rpdate,jdbcType=DATE},
+      </if>
+      <if test="rpreason != null" >
+        #{rpreason,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.edu.nuc.epms.entity.RprecordExample" resultType="java.lang.Integer" >
+    select count(*) from rprecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update rprecord
+    <set >
+      <if test="record.rpid != null" >
+        rpid = #{record.rpid,jdbcType=INTEGER},
+      </if>
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.rptype != null" >
+        rptype = #{record.rptype,jdbcType=INTEGER},
+      </if>
+      <if test="record.rpmoney != null" >
+        rpmoney = #{record.rpmoney,jdbcType=REAL},
+      </if>
+      <if test="record.rpdate != null" >
+        rpdate = #{record.rpdate,jdbcType=DATE},
+      </if>
+      <if test="record.rpreason != null" >
+        rpreason = #{record.rpreason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update rprecord
+    set rpid = #{record.rpid,jdbcType=INTEGER},
+      id = #{record.id,jdbcType=INTEGER},
+      rptype = #{record.rptype,jdbcType=INTEGER},
+      rpmoney = #{record.rpmoney,jdbcType=REAL},
+      rpdate = #{record.rpdate,jdbcType=DATE},
+      rpreason = #{record.rpreason,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.epms.entity.Rprecord" >
+    update rprecord
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rptype != null" >
+        rptype = #{rptype,jdbcType=INTEGER},
+      </if>
+      <if test="rpmoney != null" >
+        rpmoney = #{rpmoney,jdbcType=REAL},
+      </if>
+      <if test="rpdate != null" >
+        rpdate = #{rpdate,jdbcType=DATE},
+      </if>
+      <if test="rpreason != null" >
+        rpreason = #{rpreason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rpid = #{rpid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.epms.entity.Rprecord" >
+    update rprecord
+    set id = #{id,jdbcType=INTEGER},
+      rptype = #{rptype,jdbcType=INTEGER},
+      rpmoney = #{rpmoney,jdbcType=REAL},
+      rpdate = #{rpdate,jdbcType=DATE},
+      rpreason = #{rpreason,jdbcType=VARCHAR}
+    where rpid = #{rpid,jdbcType=INTEGER}
+  </update>
+</mapper>

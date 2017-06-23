@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.epms.mapper.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.epms.entity.Employee" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="eno" property="eno" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="nation" property="nation" jdbcType="VARCHAR" />
+    <result column="education" property="education" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="domicileplace" property="domicileplace" jdbcType="VARCHAR" />
+    <result column="politics" property="politics" jdbcType="VARCHAR" />
+    <result column="physiological" property="physiological" jdbcType="VARCHAR" />
+    <result column="contractSigningDate" property="contractsigningdate" jdbcType="DATE" />
+    <result column="contractexpirationdate" property="contractexpirationdate" jdbcType="DATE" />
+    <result column="contractcontents" property="contractcontents" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, eno, name, sex, birth, nation, education, duty, domicileplace, politics, physiological, 
+    contractSigningDate, contractexpirationdate, contractcontents
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.nuc.epms.entity.EmployeeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from employee
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.edu.nuc.epms.entity.EmployeeExample" >
+    delete from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.epms.entity.Employee" >
+    insert into employee (id, eno, name, 
+      sex, birth, nation, education, 
+      duty, domicileplace, politics, 
+      physiological, contractSigningDate, contractexpirationdate, 
+      contractcontents)
+    values (#{id,jdbcType=INTEGER}, #{eno,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{birth,jdbcType=DATE}, #{nation,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, 
+      #{duty,jdbcType=VARCHAR}, #{domicileplace,jdbcType=VARCHAR}, #{politics,jdbcType=VARCHAR}, 
+      #{physiological,jdbcType=VARCHAR}, #{contractsigningdate,jdbcType=DATE}, #{contractexpirationdate,jdbcType=DATE}, 
+      #{contractcontents,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.epms.entity.Employee" >
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="eno != null" >
+        eno,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="nation != null" >
+        nation,
+      </if>
+      <if test="education != null" >
+        education,
+      </if>
+      <if test="duty != null" >
+        duty,
+      </if>
+      <if test="domicileplace != null" >
+        domicileplace,
+      </if>
+      <if test="politics != null" >
+        politics,
+      </if>
+      <if test="physiological != null" >
+        physiological,
+      </if>
+      <if test="contractsigningdate != null" >
+        contractSigningDate,
+      </if>
+      <if test="contractexpirationdate != null" >
+        contractexpirationdate,
+      </if>
+      <if test="contractcontents != null" >
+        contractcontents,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="eno != null" >
+        #{eno,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="domicileplace != null" >
+        #{domicileplace,jdbcType=VARCHAR},
+      </if>
+      <if test="politics != null" >
+        #{politics,jdbcType=VARCHAR},
+      </if>
+      <if test="physiological != null" >
+        #{physiological,jdbcType=VARCHAR},
+      </if>
+      <if test="contractsigningdate != null" >
+        #{contractsigningdate,jdbcType=DATE},
+      </if>
+      <if test="contractexpirationdate != null" >
+        #{contractexpirationdate,jdbcType=DATE},
+      </if>
+      <if test="contractcontents != null" >
+        #{contractcontents,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.edu.nuc.epms.entity.EmployeeExample" resultType="java.lang.Integer" >
+    select count(*) from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update employee
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.eno != null" >
+        eno = #{record.eno,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birth != null" >
+        birth = #{record.birth,jdbcType=DATE},
+      </if>
+      <if test="record.nation != null" >
+        nation = #{record.nation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.education != null" >
+        education = #{record.education,jdbcType=VARCHAR},
+      </if>
+      <if test="record.duty != null" >
+        duty = #{record.duty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.domicileplace != null" >
+        domicileplace = #{record.domicileplace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.politics != null" >
+        politics = #{record.politics,jdbcType=VARCHAR},
+      </if>
+      <if test="record.physiological != null" >
+        physiological = #{record.physiological,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contractsigningdate != null" >
+        contractSigningDate = #{record.contractsigningdate,jdbcType=DATE},
+      </if>
+      <if test="record.contractexpirationdate != null" >
+        contractexpirationdate = #{record.contractexpirationdate,jdbcType=DATE},
+      </if>
+      <if test="record.contractcontents != null" >
+        contractcontents = #{record.contractcontents,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update employee
+    set id = #{record.id,jdbcType=INTEGER},
+      eno = #{record.eno,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      birth = #{record.birth,jdbcType=DATE},
+      nation = #{record.nation,jdbcType=VARCHAR},
+      education = #{record.education,jdbcType=VARCHAR},
+      duty = #{record.duty,jdbcType=VARCHAR},
+      domicileplace = #{record.domicileplace,jdbcType=VARCHAR},
+      politics = #{record.politics,jdbcType=VARCHAR},
+      physiological = #{record.physiological,jdbcType=VARCHAR},
+      contractSigningDate = #{record.contractsigningdate,jdbcType=DATE},
+      contractexpirationdate = #{record.contractexpirationdate,jdbcType=DATE},
+      contractcontents = #{record.contractcontents,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.epms.entity.Employee" >
+    update employee
+    <set >
+      <if test="eno != null" >
+        eno = #{eno,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="nation != null" >
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="domicileplace != null" >
+        domicileplace = #{domicileplace,jdbcType=VARCHAR},
+      </if>
+      <if test="politics != null" >
+        politics = #{politics,jdbcType=VARCHAR},
+      </if>
+      <if test="physiological != null" >
+        physiological = #{physiological,jdbcType=VARCHAR},
+      </if>
+      <if test="contractsigningdate != null" >
+        contractSigningDate = #{contractsigningdate,jdbcType=DATE},
+      </if>
+      <if test="contractexpirationdate != null" >
+        contractexpirationdate = #{contractexpirationdate,jdbcType=DATE},
+      </if>
+      <if test="contractcontents != null" >
+        contractcontents = #{contractcontents,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.epms.entity.Employee" >
+    update employee
+    set eno = #{eno,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=DATE},
+      nation = #{nation,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      duty = #{duty,jdbcType=VARCHAR},
+      domicileplace = #{domicileplace,jdbcType=VARCHAR},
+      politics = #{politics,jdbcType=VARCHAR},
+      physiological = #{physiological,jdbcType=VARCHAR},
+      contractSigningDate = #{contractsigningdate,jdbcType=DATE},
+      contractexpirationdate = #{contractexpirationdate,jdbcType=DATE},
+      contractcontents = #{contractcontents,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

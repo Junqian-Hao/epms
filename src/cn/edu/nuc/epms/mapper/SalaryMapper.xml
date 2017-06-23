@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.epms.mapper.SalaryMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.epms.entity.Salary" >
+    <id column="salaryid" property="salaryid" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="bassallary" property="bassallary" jdbcType="REAL" />
+    <result column="fine" property="fine" jdbcType="REAL" />
+    <result column="award" property="award" jdbcType="REAL" />
+    <result column="paydate" property="paydate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    salaryid, id, bassallary, fine, award, paydate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.edu.nuc.epms.entity.SalaryExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from salary
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from salary
+    where salaryid = #{salaryid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from salary
+    where salaryid = #{salaryid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.edu.nuc.epms.entity.SalaryExample" >
+    delete from salary
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.epms.entity.Salary" >
+    insert into salary (salaryid, id, bassallary, 
+      fine, award, paydate)
+    values (#{salaryid,jdbcType=INTEGER}, #{id,jdbcType=INTEGER}, #{bassallary,jdbcType=REAL}, 
+      #{fine,jdbcType=REAL}, #{award,jdbcType=REAL}, #{paydate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.epms.entity.Salary" >
+    insert into salary
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="salaryid != null" >
+        salaryid,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bassallary != null" >
+        bassallary,
+      </if>
+      <if test="fine != null" >
+        fine,
+      </if>
+      <if test="award != null" >
+        award,
+      </if>
+      <if test="paydate != null" >
+        paydate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="salaryid != null" >
+        #{salaryid,jdbcType=INTEGER},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bassallary != null" >
+        #{bassallary,jdbcType=REAL},
+      </if>
+      <if test="fine != null" >
+        #{fine,jdbcType=REAL},
+      </if>
+      <if test="award != null" >
+        #{award,jdbcType=REAL},
+      </if>
+      <if test="paydate != null" >
+        #{paydate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.edu.nuc.epms.entity.SalaryExample" resultType="java.lang.Integer" >
+    select count(*) from salary
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update salary
+    <set >
+      <if test="record.salaryid != null" >
+        salaryid = #{record.salaryid,jdbcType=INTEGER},
+      </if>
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.bassallary != null" >
+        bassallary = #{record.bassallary,jdbcType=REAL},
+      </if>
+      <if test="record.fine != null" >
+        fine = #{record.fine,jdbcType=REAL},
+      </if>
+      <if test="record.award != null" >
+        award = #{record.award,jdbcType=REAL},
+      </if>
+      <if test="record.paydate != null" >
+        paydate = #{record.paydate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update salary
+    set salaryid = #{record.salaryid,jdbcType=INTEGER},
+      id = #{record.id,jdbcType=INTEGER},
+      bassallary = #{record.bassallary,jdbcType=REAL},
+      fine = #{record.fine,jdbcType=REAL},
+      award = #{record.award,jdbcType=REAL},
+      paydate = #{record.paydate,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.epms.entity.Salary" >
+    update salary
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bassallary != null" >
+        bassallary = #{bassallary,jdbcType=REAL},
+      </if>
+      <if test="fine != null" >
+        fine = #{fine,jdbcType=REAL},
+      </if>
+      <if test="award != null" >
+        award = #{award,jdbcType=REAL},
+      </if>
+      <if test="paydate != null" >
+        paydate = #{paydate,jdbcType=DATE},
+      </if>
+    </set>
+    where salaryid = #{salaryid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.epms.entity.Salary" >
+    update salary
+    set id = #{id,jdbcType=INTEGER},
+      bassallary = #{bassallary,jdbcType=REAL},
+      fine = #{fine,jdbcType=REAL},
+      award = #{award,jdbcType=REAL},
+      paydate = #{paydate,jdbcType=DATE}
+    where salaryid = #{salaryid,jdbcType=INTEGER}
+  </update>
+</mapper>
