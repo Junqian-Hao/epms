@@ -35,11 +35,11 @@
             <td align="center"><a
                     href="../updateadmin.jsp?adminid=${admin.adminid}&password=${admin.password}&type=${admin.type}">修改</a>
             </td>
-            <td align="center"><a href="DeleatAdminServlet?userid=${admin.adminid} ">删除</a></td>
+            <td align="center"><a href="deleatAdministrator.action?adminid=${admin.adminid} ">删除</a></td>
         </tr>
         <br>
     </c:forEach>
 </table>
-
+<a href="../insertadmin.jsp">添加管理员</a>
 </body>
 </html>

@@ -47,6 +47,7 @@ public class SupperAdminController {
             return;
         }
         log.debug("登录成功");
+        request.getSession().setAttribute("id",administrator.getAdminid());
         response.sendRedirect("../index.jsp");
     }
 
@@ -61,7 +62,7 @@ public class SupperAdminController {
     }
 
     @RequestMapping("update")
-    public void update(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
+    public void updateAdministrator(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
         log.debug("修改管理员信息");
         AdministratorExample administratorExample = new AdministratorExample();
         AdministratorExample.Criteria criteria = administratorExample.createCriteria();
@@ -71,6 +72,34 @@ public class SupperAdminController {
             log.debug("修改成功");
         } else {
             log.debug("修改失败");
+        }
+        response.sendRedirect("adminlist.action");
+    }
+
+    @RequestMapping("insertAdministrator")
+    public void insertAdministrator(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
+        log.debug("添加管理员");
+        log.debug("请求数据"+administrator);
+        int insert = administratorMapper.insert(administrator);
+        if (insert > 0) {
+            log.debug("查入成功");
+        } else {
+            log.debug("插入失败");
+        }
+        response.sendRedirect("adminlist.action");
+    }
+    @RequestMapping("deleatAdministrator")
+    public void deleatAdministrator(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
+        log.debug("删除管理员");
+        log.debug("请求数据"+administrator);
+        AdministratorExample administratorExample = new AdministratorExample();
+        AdministratorExample.Criteria criteria = administratorExample.createCriteria();
+        criteria.andAdminidEqualTo(administrator.getAdminid());
+        int i = administratorMapper.deleteByExample(administratorExample);
+        if (i > 0) {
+            log.debug("删除成功");
+        } else {
+            log.debug("删除失败");
         }
         response.sendRedirect("adminlist.action");
     }
