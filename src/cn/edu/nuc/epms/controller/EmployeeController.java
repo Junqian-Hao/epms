@@ -24,6 +24,7 @@ public class EmployeeController {
     @RequestMapping("insert")
     public void insert(HttpServletResponse response, HttpServletRequest request,Employee employee){
         log.debug("insert");
+         log.debug("commit");
 
     }
 
