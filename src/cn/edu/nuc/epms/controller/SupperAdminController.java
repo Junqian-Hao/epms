@@ -27,11 +27,11 @@ public class SupperAdminController {
     private static final Log log = LogFactory.getLog(SupperAdminController.class);
 
     @RequestMapping("login")
-    public void loggin(HttpServletRequest request, HttpServletResponse response, Administrator administrator) throws Exception{
+    public void loggin(HttpServletRequest request, HttpServletResponse response, Administrator administrator) throws Exception {
         log.debug("用户登录");
         if (administrator == null) {
             request.setAttribute("message", "请输入账号密码");
-            request.getRequestDispatcher("../login.jsp").forward(request,response);
+            request.getRequestDispatcher("../login.jsp").forward(request, response);
             return;
         }
         AdministratorExample administratorExample = new AdministratorExample();
@@ -39,15 +39,39 @@ public class SupperAdminController {
         criteria.andAdminidEqualTo(administrator.getAdminid());
         criteria.andPasswordEqualTo(administrator.getPassword());
         List<Administrator> administrators = administratorMapper.selectByExample(administratorExample);
-        log.debug("查询返回"+administrators);
-        if (administrators == null || administrators.size()==0) {
+        log.debug("查询返回" + administrators);
+        if (administrators == null || administrators.size() == 0) {
             log.debug("账号密码错误");
             request.setAttribute("message", "账号或密码错误");
-            request.getRequestDispatcher("../login.jsp").forward(request,response);
+            request.getRequestDispatcher("../login.jsp").forward(request, response);
             return;
         }
         log.debug("登录成功");
         response.sendRedirect("../index.jsp");
-        return;
+    }
+
+    @RequestMapping("adminlist")
+    public void adminlist(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        log.debug("显示所有管理员");
+        AdministratorExample administratorExample = new AdministratorExample();
+        List<Administrator> administrators = administratorMapper.selectByExample(administratorExample);
+        log.debug("查询结果:" + administrators);
+        request.setAttribute("adminlist", administrators);
+        request.getRequestDispatcher("../adminlist.jsp").forward(request, response);
+    }
+
+    @RequestMapping("update")
+    public void update(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
+        log.debug("修改管理员信息");
+        AdministratorExample administratorExample = new AdministratorExample();
+        AdministratorExample.Criteria criteria = administratorExample.createCriteria();
+        criteria.andAdminidEqualTo(administrator.getAdminid());
+        int i = administratorMapper.updateByExample(administrator, administratorExample);
+        if (i > 0) {
+            log.debug("修改成功");
+        } else {
+            log.debug("修改失败");
+        }
+        response.sendRedirect("adminlist.action");
     }
 }

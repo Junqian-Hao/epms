@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>欢迎</title>
+</head>
+<body>
+<a href="SupperAdminController/adminlist.action">管理员管理列表</a>
+</body>
 </html>
