@@ -1,5 +1,7 @@
 package cn.edu.nuc.epms.intercepts;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,11 +15,14 @@ import java.io.IOException;
  * @Description : 全局异常处理
  */
 public class AllExceptionResolver implements HandlerExceptionResolver {
+    private static final Log log = LogFactory.getLog(AllExceptionResolver.class);
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest,
                                          HttpServletResponse httpServletResponse,
                                          Object o, Exception e) {
+        log.debug("全局异常处理");
         try {
+
             httpServletResponse.sendRedirect("error.html");
         } catch (IOException e1) {
             e1.printStackTrace();
