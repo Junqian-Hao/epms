@@ -20,7 +20,7 @@
        <li> <input type="text" name="eno"></li>
        <li> <input type="text" name="name"></li>
        <li> <input type="text" name="sex"></li>
-       <li> <input type="date" name="brith"></li>
+       <li> <input type="date" name="birth"></li>
        <li> <input type="text" name="nation"></li>
        <li> <input type="text" name="education"></li>
        <li> <input type="text" name="duty"></li>
