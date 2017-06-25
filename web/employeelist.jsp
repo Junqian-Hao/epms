@@ -31,11 +31,11 @@
        <li> <input type="date" name="contractexpirationdate"></li>
        <li> <input type="text" name="contractcontents"></li>
    </ul>
-       <input type="button" value="录入">
+       <input type="submit" value="录入">
 </form>
 
 <table>
-<c:forEach var="employee" items="${employeelist}" varStatus="vs">
+<c:forEach var="employee" items="${employeelist}" varStatus="status">
     <tr <c:if test="${status.count%2==0}">bgcolor="#CCCCFE"</c:if> align="left">
 
         <td>${employee.id}</td>
