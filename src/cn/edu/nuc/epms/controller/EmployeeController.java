@@ -76,5 +76,11 @@ public class EmployeeController {
         response.sendRedirect("employeelist.action");
     }
 
+    @RequestMapping("test")
+    public void test(HttpServletRequest request,HttpServletResponse response,Employee data)throws Exception {
+        log.debug("日期时间测试");
+        log.debug(data);
 
-}
+    }
+
+    }

@@ -12,5 +12,9 @@
 </head>
 <body>
 <a href="SupperAdminController/adminlist.action">管理员管理列表</a>
+<form method="post" action="EmployeeController/test.action">
+    <input type="date" name="contractexpirationdate">
+    <input type="submit">
+</form>
 </body>
 </html>
