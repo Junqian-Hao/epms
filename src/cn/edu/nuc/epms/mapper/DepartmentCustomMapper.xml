@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.epms.mapper.DepartmentCustomMapper" >
+    <resultMap id="DepartmentCustomMapper" type="cn.edu.nuc.epms.entity.DepartmentCustom" >
+        <id column="eno" property="eno" jdbcType="INTEGER" />
+        <result column="dname" property="dname" jdbcType="VARCHAR" />
+        <result column="eid" property="eid" jdbcType="INTEGER" />
+        <result column="eno" property="eno" jdbcType="INTEGER" />
+        <result column="name" property="employee.name" jdbcType="VARCHAR" />
+        <result column="sex" property="employee.sex" jdbcType="VARCHAR" />
+        <result column="birth" property="employee.birth" jdbcType="DATE" />
+        <result column="nation" property="employee.nation" jdbcType="VARCHAR" />
+        <result column="education" property="employee.education" jdbcType="VARCHAR" />
+        <result column="duty" property="employee.duty" jdbcType="VARCHAR" />
+        <result column="domicileplace" property="employee.domicileplace" jdbcType="VARCHAR" />
+        <result column="politics" property="employee.politics" jdbcType="VARCHAR" />
+        <result column="physiological" property="employee.physiological" jdbcType="VARCHAR" />
+        <result column="contractSigningDate" property="employee.contractsigningdate" jdbcType="DATE" />
+        <result column="contractexpirationdate" property="employee.contractexpirationdate" jdbcType="DATE" />
+        <result column="contractcontents" property="employee.contractcontents" jdbcType="VARCHAR" />
+    </resultMap>
+<select id="selectDepartmentCustom" resultMap="DepartmentCustomMapper">
+    SELECT department.*,employee.* FROM department,employee WHERE department.`eid` = employee.`id`
+</select>
+</mapper>

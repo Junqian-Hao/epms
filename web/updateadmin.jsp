@@ -14,9 +14,9 @@
 <jsp:useBean id="admin" class="cn.edu.nuc.epms.entity.Administrator" scope="page">
     <jsp:setProperty name="admin" property="*"/>
     <form method="post" action="SupperAdminController/update.action">
-        管理员账号:${admin.adminid}<input type="hidden" name="adminid" value="${admin.adminid}"><br>
-        密码:<input type="text" name="password" value="${admin.password}"><br>
-        类型:<input type="number" name="type" value="${admin.type}">0:系统管理员1:财务管理员2:人事管理员<br>
+        管理员账号:${department.adminid}<input type="hidden" name="adminid" value="${department.adminid}"><br>
+        密码:<input type="text" name="password" value="${department.password}"><br>
+        类型:<input type="number" name="type" value="${department.type}">0:系统管理员1:财务管理员2:人事管理员<br>
         <input type="submit">
     </form>
 </jsp:useBean>

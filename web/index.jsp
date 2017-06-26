@@ -12,5 +12,6 @@
 </head>
 <body>
 <a href="SupperAdminController/adminlist.action">管理员管理列表</a>
+<a href="DepartmentController/select.action">查看部门</a>
 </body>
 </html>
