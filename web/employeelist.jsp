@@ -13,28 +13,7 @@
 </head>
 <body>
 <p>员工管理。</p>
-<!--<form method="post" action="EmployeeController/insertEmployee.action">
-   <ul>
-       <li> <input type="text" name="id"></li>
-       <li> <input type="text" name="eno"></li>
-       <li> <input type="text" name="name"></li>
-       <li> <input type="text" name="sex"></li>
-       <li> <input type="date" name="birth"></li>
-       <li> <input type="text" name="nation"></li>
-       <li> <input type="text" name="education"></li>
-       <li> <input type="text" name="duty"></li>
-       <li> <input type="text" name="domicileplace"></li>
-       <li> <input type="text" name="politics"></li>
-       <li> <input type="text" name="physiological"></li>
-       <li> <input type="date" name="contractsigningdate"></li>
-       <li> <input type="date" name="contractexpirationdate"></li>
-       <li> <input type="text" name="contractcontents"></li>
-   </ul>
-       <input type="submit" value="录入">
-</form>
--->
-
-<table border="20">
+<table border="10" bgcolor="#00bfff">
     <tr>
         <td align="center">eno</td>
         <td align="center">id</td>
@@ -72,6 +51,7 @@
     </tr>
     </c:forEach>
 </table>
+    <a href="insertemployee.jsp">录入</a>
 
 </body>
 </html>
