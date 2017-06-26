@@ -25,7 +25,7 @@ public class BusinesstripController {
 
     @RequestMapping("/insert")
     public void insert(HttpServletRequest request, HttpServletResponse response , Businesstrip businesstrip) throws Exception {
-        log.debug("添加出差记录");
+        log.debug("添加出差记录 ");
         log.debug("请求数据" + businesstrip);
 
     }
