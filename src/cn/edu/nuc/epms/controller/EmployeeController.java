@@ -32,9 +32,9 @@ public class EmployeeController {
         log.debug("显示所有员工信息");
         EmployeeExample employeeExample = new EmployeeExample();
         List<Employee> employees = employeeMapper.selectByExample(employeeExample);
-        log.debug("员工" + employees);
+        log.debug("查询结果" + employees);
         request.setAttribute("employees", employees);
-        response.sendRedirect("employeelist.action");
+        request.getRequestDispatcher("../employeelist.jsp").forward(request,response);
 
     }
 
@@ -65,7 +65,7 @@ public class EmployeeController {
         response.sendRedirect("employeelist.action");
     }
 
-    @RequestMapping("updateEmployee")
+    @RequestMapping("update")
     public void updateEmployee(HttpServletRequest request, HttpServletResponse response, Employee employee) throws Exception {
         log.debug("update");
         EmployeeExample employeeExample = new EmployeeExample();

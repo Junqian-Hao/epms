@@ -1,8 +1,6 @@
 package cn.edu.nuc.epms.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
+import java.sql.Date;
 
 public class Employee {
     private Integer id;
@@ -13,7 +11,6 @@ public class Employee {
 
     private String sex;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birth;
 
     private String nation;
@@ -28,10 +25,8 @@ public class Employee {
 
     private String physiological;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date contractsigningdate;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date contractexpirationdate;
 
     private String contractcontents;

@@ -27,7 +27,7 @@ public class SupperAdminController {
     private static final Log log = LogFactory.getLog(SupperAdminController.class);
 
     @RequestMapping("login")
-    public void loggin(HttpServletRequest request, HttpServletResponse response, Administrator administrator) throws Exception {
+    public void login(HttpServletRequest request, HttpServletResponse response, Administrator administrator) throws Exception {
         log.debug("用户登录");
         if (administrator == null) {
             request.setAttribute("message", "请输入账号密码");
