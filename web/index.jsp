@@ -12,10 +12,9 @@
 </head>
 <body>
 <a href="SupperAdminController/adminlist.action">管理员管理列表</a>
-<<<<<<< Updated upstream
-<a href="DepartmentController/select.action">查看部门</a>
-=======
-<a href="EmployeeController/employeelist.action">员工信息表</a>
->>>>>>> Stashed changes
+<br>
+<a href="DepartmentController/select.action">查看部门</a><br>
+<a href="EmployeeController/employeelist.action">员工信息表</a><br>
+<a href="RemoveController/removelist.action">员工调动记录</a>
 </body>
 </html>

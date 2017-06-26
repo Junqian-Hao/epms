@@ -12,15 +12,13 @@
 </head>
 <body>
 
-<jsp:useBean id="employee" scope="page" class="cn.edu.nuc.epms.entity.Employee">
-    <jsp:setProperty name="employee" property="*">
     <form method="post" action="EmployeeController/update.action">
             <ul>
-                <li>ID：${employee.id}<input type="hidden" name="id" value="${employee.id}"></li>
+                <li>ID：${employee.id} <input type="hidden" name="id" value="${employee.id}"></li>
                 <li> <input type="text" name="eno" value="${employee.eno}"></li>
                 <li> <input type="text" name="name" value="${employee.name}"></li>
                 <li> <input type="text" name="sex" value="${employee.sex}"></li>
-                <li> <input type="date" name="birth" value="${employee.birth}"></li>
+                <li> <input type="date" name="birth" value="new java.util.Date${employee.birth}"></li>
                 <li> <input type="text" name="nation" value="${employee.nation}"></li>
                 <li> <input type="text" name="education" value="${employee.education}"></li>
                 <li> <input type="text" name="duty" value="${employee.duty}"></li>
@@ -33,6 +31,5 @@
             </ul>
             <input type="submit" value="录入">
         </form>
-</jsp:useBean>
 </body>
 </html>
