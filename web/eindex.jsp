@@ -29,5 +29,10 @@
     员工编号:<input type="number" name="id">
     <input type="submit">
 </form>
+查询出差任务:
+<form method="post" action="/epms/BusinesstripController/selectById.action">
+    员工编号:<input type="number" name="id">
+    <input type="submit">
+</form>
 </body>
 </html>
