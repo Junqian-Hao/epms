@@ -29,7 +29,7 @@
             <td align="center"><a
                     href="../updatedepartment.jsp?eno=${department.eno}&dname=${department.dname}&eid=${department.eid}">修改</a>
             </td>
-            <td align="center"><a href="deleat.action?eno=${department.eno}">删除</a></td>
+            <td align="center"><a href="delete.action?eno=${department.eno}">删除</a></td>
         </tr>
         <br>
     </c:forEach>

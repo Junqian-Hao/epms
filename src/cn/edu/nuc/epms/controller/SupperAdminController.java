@@ -88,8 +88,8 @@ public class SupperAdminController {
         }
         response.sendRedirect("adminlist.action");
     }
-    @RequestMapping("deleatAdministrator")
-    public void deleatAdministrator(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
+    @RequestMapping("deleteAdministrator")
+    public void deleteAdministrator(HttpServletRequest request, HttpServletResponse response , Administrator administrator) throws Exception {
         log.debug("删除管理员");
         log.debug("请求数据"+administrator);
         AdministratorExample administratorExample = new AdministratorExample();

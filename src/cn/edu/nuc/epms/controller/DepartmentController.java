@@ -66,8 +66,8 @@ public class DepartmentController {
         response.sendRedirect("select.action");
     }
 
-    @RequestMapping("/deleat")
-    public void deleat(HttpServletRequest request, HttpServletResponse response ,Department department) throws Exception {
+    @RequestMapping("/delete")
+    public void delete(HttpServletRequest request, HttpServletResponse response ,Department department) throws Exception {
         log.debug("删除部门");
         log.debug("请求数据"+department);
         int i = departmentMapper.deleteByPrimaryKey(department.getEno());

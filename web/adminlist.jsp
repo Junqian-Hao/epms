@@ -35,7 +35,7 @@
             <td align="center"><a
                     href="../updateadmin.jsp?adminid=${department.adminid}&password=${department.password}&type=${department.type}">修改</a>
             </td>
-            <td align="center"><a href="deleatAdministrator.action?adminid=${department.adminid} ">删除</a></td>
+            <td align="center"><a href="deleteAdministrator.action?adminid=${department.adminid} ">删除</a></td>
         </tr>
         <br>
     </c:forEach>
