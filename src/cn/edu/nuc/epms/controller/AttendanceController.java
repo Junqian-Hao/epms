@@ -86,12 +86,14 @@ public class AttendanceController {
         }
         request.getRequestDispatcher("../eindex.jsp").forward(request,response);
     }
+
     @RequestMapping("/selectAll")
     public void selectAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.debug("查询所有签到信息");
         AttendanceExample attendanceExample = new AttendanceExample();
         List<Attendance> attendances = attendanceMapper.selectByExample(attendanceExample);
-        request.getRequestDispatcher("../eindex.jsp").forward(request,response);
+        request.setAttribute("attendancelist",attendances);
+        request.getRequestDispatcher("../attendancelist.jsp").forward(request,response);
     }
 
 }

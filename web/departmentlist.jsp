@@ -20,16 +20,16 @@
         <td align="center">领导人姓名</td>
         <td align="center" colspan="2">操作</td>
     </tr>
-    <c:forEach items="${departmentlist}" var="department" varStatus="vs">
+    <c:forEach items="${departmentlist}" var="attendance" varStatus="vs">
         <tr>
-            <td align="center">${department.eno}</td>
-            <td align="center">${department.dname}</td>
-            <td align="center">${department.eid}</td>
-            <td align="center">${department.employee.name}</td>
+            <td align="center">${attendance.eno}</td>
+            <td align="center">${attendance.dname}</td>
+            <td align="center">${attendance.eid}</td>
+            <td align="center">${attendance.employee.name}</td>
             <td align="center"><a
-                    href="../updatedepartment.jsp?eno=${department.eno}&dname=${department.dname}&eid=${department.eid}">修改</a>
+                    href="../updatedepartment.jsp?eno=${attendance.eno}&dname=${attendance.dname}&eid=${attendance.eid}">修改</a>
             </td>
-            <td align="center"><a href="delete.action?eno=${department.eno}">删除</a></td>
+            <td align="center"><a href="delete.action?eno=${attendance.eno}">删除</a></td>
         </tr>
         <br>
     </c:forEach>

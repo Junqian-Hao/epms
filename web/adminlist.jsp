@@ -19,23 +19,23 @@
         <td align="center">类型</td>
         <td align="center" colspan="2">操作</td>
     </tr>
-    <c:forEach items="${adminlist}" var="department" varStatus="vs">
+    <c:forEach items="${adminlist}" var="attendance" varStatus="vs">
         <tr>
-            <td align="center">${department.adminid}</td>
-            <td align="center">${department.password}</td>
-            <c:if test="${department.type==0}">
+            <td align="center">${attendance.adminid}</td>
+            <td align="center">${attendance.password}</td>
+            <c:if test="${attendance.type==0}">
                 <td align="center">系统管理员</td>
             </c:if>
-            <c:if test="${department.type==1}">
+            <c:if test="${attendance.type==1}">
                 <td align="center">财务管理</td>
             </c:if>
-            <c:if test="${department.type==2}">
+            <c:if test="${attendance.type==2}">
                 <td align="center">人事管理</td>
             </c:if>
             <td align="center"><a
-                    href="../updateadmin.jsp?adminid=${department.adminid}&password=${department.password}&type=${department.type}">修改</a>
+                    href="../updateadmin.jsp?adminid=${attendance.adminid}&password=${attendance.password}&type=${attendance.type}">修改</a>
             </td>
-            <td align="center"><a href="deleteAdministrator.action?adminid=${department.adminid} ">删除</a></td>
+            <td align="center"><a href="deleteAdministrator.action?adminid=${attendance.adminid} ">删除</a></td>
         </tr>
         <br>
     </c:forEach>
