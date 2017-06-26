@@ -1,5 +1,7 @@
 package cn.edu.nuc.epms.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Attendance {
@@ -7,10 +9,13 @@ public class Attendance {
 
     private Integer id;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date attdate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date workhours;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date closingtime;
 
     private Integer isovertime;
