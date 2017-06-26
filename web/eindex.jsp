@@ -24,5 +24,10 @@
     <input type="button" onclick="form1.action='/epms/AttendanceController/endWork.action';form1.submit();" value="签退"><br>
     <span>${message}</span>
 </form>
+查询签到记录: <br>
+<form method="post" action="/epms/AttendanceController/selectById.action">
+    员工编号:<input type="number" name="id">
+    <input type="submit">
+</form>
 </body>
 </html>

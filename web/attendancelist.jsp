@@ -14,6 +14,10 @@
     <title>考勤记录</title>
 </head>
 <body>
+<form method="post" action="/epms/AttendanceController/selectById.action">
+    员工编号:<input type="number" name="id">
+    <input type="submit">
+</form>
 <table>
     <tr>
         <td align="center">记录编号</td>
@@ -30,7 +34,12 @@
             <td align="center"><fmt:formatDate value="${attendance.attdate}" pattern="yyyy-MM-dd"/></td>
             <td align="center"><fmt:formatDate value="${attendance.workhours}" pattern="hh:mm:ss"/></td>
             <td align="center"><fmt:formatDate value="${attendance.closingtime}" pattern="hh:mm:ss"/></td>
-            <td align="center">${attendance.isovertime}</td>
+            <c:if test="${attendance.isovertime==0}">
+            <td align="center">否</td>
+            </c:if>
+            <c:if test="${attendance.isovertime==1}">
+                <td align="center">是</td>
+            </c:if>
         </tr>
         <br>
     </c:forEach>

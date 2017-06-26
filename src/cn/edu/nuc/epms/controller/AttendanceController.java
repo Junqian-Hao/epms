@@ -95,5 +95,15 @@ public class AttendanceController {
         request.setAttribute("attendancelist",attendances);
         request.getRequestDispatcher("../attendancelist.jsp").forward(request,response);
     }
+    @RequestMapping("/selectById")
+    public void selectById(HttpServletRequest request, HttpServletResponse response,int id) throws Exception {
+        log.debug("通过id查询签到信息");
+        AttendanceExample attendanceExample = new AttendanceExample();
+        AttendanceExample.Criteria criteria = attendanceExample.createCriteria();
+        criteria.andIdEqualTo(id);
+        List<Attendance> attendances = attendanceMapper.selectByExample(attendanceExample);
+        request.setAttribute("attendancelist",attendances);
+        request.getRequestDispatcher("../attendancelist.jsp").forward(request,response);
+    }
 
 }

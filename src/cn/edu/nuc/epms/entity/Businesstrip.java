@@ -1,5 +1,7 @@
 package cn.edu.nuc.epms.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Businesstrip {
@@ -7,8 +9,10 @@ public class Businesstrip {
 
     private Integer btid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date btdate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date registerdate;
 
     private String btmessage;
