@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.epms.mapper.TrainCustomMapper" >
+    <resultMap id="TrainCustomMapper" type="cn.edu.nuc.epms.entity.TrainCustom" >
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="eno" property="eno" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="VARCHAR" />
+        <result column="birth" property="birth" jdbcType="DATE" />
+        <result column="nation" property="nation" jdbcType="VARCHAR" />
+        <result column="education" property="education" jdbcType="VARCHAR" />
+        <result column="duty" property="duty" jdbcType="VARCHAR" />
+        <result column="domicileplace" property="domicileplace" jdbcType="VARCHAR" />
+        <result column="politics" property="politics" jdbcType="VARCHAR" />
+        <result column="physiological" property="physiological" jdbcType="VARCHAR" />
+        <result column="contractSigningDate" property="contractsigningdate" jdbcType="DATE" />
+        <result column="contractexpirationdate" property="contractexpirationdate" jdbcType="DATE" />
+        <result column="contractcontents" property="contractcontents" jdbcType="VARCHAR" />
+        <result column="trainid" property="trainid" jdbcType="INTEGER" />
+        <result column="tstarttime" property="tstarttime" jdbcType="DATE" />
+        <result column="tendtime" property="tendtime" jdbcType="DATE" />
+        <result column="tcontent" property="tcontent" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectTrainCustomMapper" resultMap="TrainCustomMapper">
+        SELECT * FROM train ,trainrecord,employee WHERE employee.`id`=trainrecord.`id` AND trainrecord.`trainid`=train.`trainid`
+    </select>
+</mapper>

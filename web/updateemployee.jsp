@@ -15,7 +15,7 @@
 
     <form method="post" action="updateEmployee.action">
             <ul>
-                <li>员工编号：${employee.id} <input type="hidden" name="id" value="${employee1.id}"></li>
+                <li>员工编号：${employee1.id} <input type="hidden" name="id" value="${employee1.id}"></li>
                 <li>部门号： <input type="text" name="eno" value="${employee1.eno}"></li>
                 <li>姓名： <input type="text" name="name" value="${employee1.name}"></li>
                 <li>性别： <input type="text" name="sex" value="${employee1.sex}"></li>

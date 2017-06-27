@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
   User: macbookair
@@ -14,21 +15,22 @@
 <body>
 <table>
     <p>培训记录信息</p>
-    
-        <c:forEach items="${trainlist}" var="tl">
+    <tr>
+        <td>员工编号</td>
+        <td>培训项目编号</td>
+        <td>开始时间</td>
+        <td>结束时间</td>
+        <td>培训内容</td>
+    </tr>
         <c:forEach items="${trainrecordlist}" var="trl">
-        <c:forEach items="${employeelist}" var="el">
-            <c:if test="${trl.id=el.id and trl.trainid=tl.trainid}">
         <tr>
             <td>${trl.id}</td>
             <td>${trl.trainid}</td>
-            <td>${tl.tstarttime}</td>
-            <td>${tl.tendtime}</td>
+            <td><fmt:formatDate value="${trl.tstarttime}" pattern="yyyy-MM-dd"/></td>
+            <td><fmt:formatDate value="${trl.tendtime}" pattern="yyyy-MM-dd"/></td>
+            <td>${trl.tcontent}</td>
                     
         </tr>
-            </c:if>
-    </c:forEach>
-    </c:forEach>
     </c:forEach>
 </table>
 </body>

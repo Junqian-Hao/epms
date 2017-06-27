@@ -42,6 +42,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 response.sendRedirect("/epms/login.jsp");
                 return false;
             }
+            logger.debug("身份id:"+id);
         }
 
         return true;

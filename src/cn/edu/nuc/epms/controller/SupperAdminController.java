@@ -29,6 +29,7 @@ public class SupperAdminController {
     @RequestMapping("login")
     public void login(HttpServletRequest request, HttpServletResponse response, Administrator administrator) throws Exception {
         log.debug("用户登录");
+        log.debug("请求参数"+administrator);
         if (administrator == null) {
             request.setAttribute("message", "请输入账号密码");
             request.getRequestDispatcher("../login.jsp").forward(request, response);
@@ -43,12 +44,27 @@ public class SupperAdminController {
         if (administrators == null || administrators.size() == 0) {
             log.debug("账号密码错误");
             request.setAttribute("message", "账号或密码错误");
-            request.getRequestDispatcher("../login.jsp").forward(request, response);
+            request.getRequestDispatcher("/epms/login.jsp").forward(request, response);
             return;
         }
+        Administrator administrator1 = administrators.get(0);
+        Integer type = administrator1.getType();
+        if (type == 0) {
         log.debug("登录成功");
         request.getSession().setAttribute("id",administrator.getAdminid());
         response.sendRedirect("../index.jsp");
+        }
+        if (type == 1) {
+        log.debug("登录成功");
+        request.getSession().setAttribute("id",administrator.getAdminid());
+        response.sendRedirect("../index1.jsp");
+        }
+        if (type == 2) {
+        log.debug("登录成功");
+        request.getSession().setAttribute("id",administrator.getAdminid());
+        response.sendRedirect("../index2.jsp");
+        }
+
     }
 
     @RequestMapping("adminlist")

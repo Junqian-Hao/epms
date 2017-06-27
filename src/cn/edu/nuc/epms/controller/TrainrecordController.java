@@ -2,6 +2,7 @@ package cn.edu.nuc.epms.controller;
 
 import cn.edu.nuc.epms.entity.*;
 import cn.edu.nuc.epms.mapper.EmployeeMapper;
+import cn.edu.nuc.epms.mapper.TrainCustomMapper;
 import cn.edu.nuc.epms.mapper.TrainMapper;
 import cn.edu.nuc.epms.mapper.TrainrecordMapper;
 import org.apache.commons.logging.Log;
@@ -28,6 +29,8 @@ public class TrainrecordController {
     TrainMapper trainMapper;
     @Autowired
     EmployeeMapper employeeMapper;
+    @Autowired
+    TrainCustomMapper trainCustomMapper;
 
     @RequestMapping("inserttrainrecord")
     public void inserttrainrecord(HttpServletRequest request, HttpServletResponse response,TrainrecordKey trainrecordKey) throws Exception{
@@ -44,16 +47,9 @@ public class TrainrecordController {
     }
     @RequestMapping("trainrecordlist")
     public void trainrecordlist(HttpServletResponse response,HttpServletRequest request)throws Exception{
-        TrainrecordExample trainrecordExample=new TrainrecordExample();
-        EmployeeExample employeeExample=new EmployeeExample();
-        TrainExample trainExample=new TrainExample();
-        List<TrainrecordKey> trainrecordKeys=trainrecordMapper.selectByExample(trainrecordExample);
-        List<Train> trains=trainMapper.selectByExample(trainExample);
-        List<Employee> employees=employeeMapper.selectByExample(employeeExample);
-        log.debug("培训记录"+trainrecordKeys);
-        request.setAttribute("trainrecordlist",trainrecordKeys);
-        request.setAttribute("trainlist",trains);
-        request.setAttribute("employeelist",employees);
+        List<TrainCustomMapper> trainCustomMappers = trainCustomMapper.selectTrainCustomMapper();
+        log.debug("培训记录"+trainCustomMappers);
+        request.setAttribute("trainrecordlist",trainCustomMappers);
         request.getRequestDispatcher("../trainrecordlist.jsp").forward(request,response);
     }
 

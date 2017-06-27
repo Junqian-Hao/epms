@@ -114,9 +114,6 @@
       </if>
     </trim>
   </insert>
-  <select id="show" parameterType="cn.edu.nuc.epms.entity.TrainExample" resultType="java.lang.BaseResultMap">
-    SELECT
-  </select>
   <select id="countByExample" parameterType="cn.edu.nuc.epms.entity.TrainrecordExample" resultType="java.lang.Integer" >
     select count(*) from trainrecord
     <if test="_parameter != null" >
