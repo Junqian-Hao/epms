@@ -13,7 +13,7 @@
 </head>
 <body>
 <p>员工管理。</p>
-<table border="10" bgcolor="#00bfff">
+<table border="10" color="#00bfff">
     <tr>
         <td align="center">eno</td>
         <td align="center">id</td>

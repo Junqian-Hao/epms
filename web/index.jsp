@@ -17,5 +17,7 @@
 <a href="RemoveController/removelist.action">员工调动记录</a>
 <a href="AttendanceController/selectAll.action">查询签到记录</a>
 <a href="BusinesstripController/selectAll.action">出差管理</a>
+<a href="TrainController/trainlist.action">培训管理</a>
+
 </body>
 </html>

@@ -31,11 +31,8 @@
         <td align="center"><a href="deletetrain.action?trainid=${train.trainid}">删除</a> </td>
     </tr>
     </c:forEach>
-
-
-    <form action="TrainController/inserttrain.action" method="post">
-
-    </form>
 </table>
+       <a href="../inserttrain.jsp">新建培训项目</a>
+
 </body>
 </html>
