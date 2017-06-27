@@ -44,7 +44,7 @@ public class TrainController{
         }
         response.sendRedirect("trainlist.action");
     }
-    @RequestMapping("update")
+    @RequestMapping("updatetrain")
     public void updatetrain(HttpServletRequest request,HttpServletResponse response,Train train)throws Exception{
      TrainExample trainExample=new TrainExample();
      TrainExample.Criteria criteria=trainExample.createCriteria();

@@ -12,22 +12,22 @@
 </head>
 <body>
 
-    <form method="post" action="EmployeeController/update.action">
+    <form method="post" action="EmployeeController/updateEmployee.action">
             <ul>
-                <li>ID：${employee.id} <input type="hidden" name="id" value="${employee.id}"></li>
-                <li> <input type="text" name="eno" value="${employee.eno}"></li>
-                <li> <input type="text" name="name" value="${employee.name}"></li>
-                <li> <input type="text" name="sex" value="${employee.sex}"></li>
-                <li> <input type="date" name="birth" value="new java.util.Date${employee.birth}"></li>
-                <li> <input type="text" name="nation" value="${employee.nation}"></li>
-                <li> <input type="text" name="education" value="${employee.education}"></li>
-                <li> <input type="text" name="duty" value="${employee.duty}"></li>
-                <li> <input type="text" name="domicileplace value="${employee.domicileplace}"></li>
-                <li> <input type="text" name="politics" value="${employee.politics}"></li>
-                <li> <input type="text" name="physiological" value="${employee.physiological}"></li>
-                <li> <input type="date" name="contractsigningdate" value="${employee.contractsigningdate}"></li>
-                <li> <input type="date" name="contractexpirationdate" value="${employee.contractexpirationdate}"></li>
-                <li> <input type="text" name="contractcontents" value="${employee.contractcontents}"></li>
+                <li>ID：${employee.id} <input type="hidden" name="id" value="<%=request.getParameter("id")%>"></li>
+                <li> <input type="text" name="eno" value="<%=request.getParameter("eno")%>"></li>
+                <li> <input type="text" name="name" value="<%=request.getParameter("name")%>"></li>
+                <li> <input type="text" name="sex" value="<%=request.getParameter("sex")%>"></li>
+                <li> <input type="date" name="birth" value="<%=request.getParameter("birth")%>"></li>
+                <li> <input type="text" name="nation" value="<%=request.getParameter("nation")%>"></li>
+                <li> <input type="text" name="education" value="<%=request.getParameter("education")%>"></li>
+                <li> <input type="text" name="duty" value="<%=request.getParameter("duty")%>"></li>
+                <li> <input type="text" name="domicileplace" value="<%=request.getParameter("domicileplace")%>"></li>
+                <li> <input type="text" name="politics" value="<%=request.getParameter("politics")%>"></li>
+                <li> <input type="text" name="physiological" value="<%=request.getParameter("physiological")%>"></li>
+                <li> <input type="date" name="contractsigningdate" value="<%=request.getParameter("contractsigningdate")%>"></li>
+                <li> <input type="date" name="contractexpirationdate" value="<%=request.getParameter("contractexpirationdate")%>"></li>
+                <li> <input type="text" name="contractcontents" value="<%=request.getParameter("contractcontents")%>"></li>
             </ul>
             <input type="submit" value="录入">
         </form>

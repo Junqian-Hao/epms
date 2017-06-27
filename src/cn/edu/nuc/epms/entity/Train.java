@@ -1,12 +1,16 @@
 package cn.edu.nuc.epms.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Train {
     private Integer trainid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tstarttime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tendtime;
 
     private String tcontent;

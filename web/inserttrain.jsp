@@ -13,9 +13,10 @@
 <body>
 <p>添加培训项目</p>
 <form action="TrainController/inserttrain.action" method="post">
-    <input type="date" name="tstarttime">
-    <input type="date" name="tendtime">
-    <input type="text" name="tcontent">
+    培训编号：<<input type="number" name="trainid">
+   培训项目起始日期:<input type="date" name="tstarttime">
+    培训项目截止日期:<input type="date" name="tendtime">
+     培训内容:<input type="text" name="tcontent">
     <input type="submit" value="提交">
 </form>
 </body>

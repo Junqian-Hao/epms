@@ -82,7 +82,7 @@ public class EmployeeController {
         response.sendRedirect("employeelist.action");
     }
 
-    @RequestMapping("update")
+    @RequestMapping("updateEmployee")
     public void updateEmployee(HttpServletRequest request, HttpServletResponse response, Employee employee) throws Exception {
         log.debug("update");
         Employee employee1=employeeMapper.selectByPrimaryKey(employee.getId());
