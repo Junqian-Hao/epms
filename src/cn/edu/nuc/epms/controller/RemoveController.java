@@ -5,6 +5,7 @@ import cn.edu.nuc.epms.entity.RemoveExample;
 import cn.edu.nuc.epms.mapper.RemoveMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/RemoveController")
 public class RemoveController {
+    @Autowired
     RemoveMapper removeMapper;
 
     private static final Log log = LogFactory.getLog(EmployeeController.class);

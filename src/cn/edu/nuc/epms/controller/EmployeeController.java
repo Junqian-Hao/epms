@@ -27,8 +27,9 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    RemoveMapper removeMapper;
     EmployeeMapper employeeMapper;
+    @Autowired
+    RemoveMapper removeMapper;
 
     private static final Log log = LogFactory.getLog(EmployeeController.class);
 
@@ -63,12 +64,18 @@ public class EmployeeController {
     @RequestMapping("deleteEmployee")
     public void deleteEmployee(HttpServletResponse response, HttpServletRequest request, Employee employee) throws Exception {
         log.debug("delete");
-        EmployeeExample employeeExample = new EmployeeExample();
+        EmployeeExample employeeExample=new EmployeeExample();
+        Employee employee1 = employeeMapper.selectByPrimaryKey(employee.getId());
+        employee1.setDuty("离职");
         EmployeeExample.Criteria criteria = employeeExample.createCriteria();
         criteria.andIdEqualTo(employee.getId());
-        int delete = employeeMapper.deleteByExample(employeeExample);
+        int delete = employeeMapper.updateByExample(employee1,employeeExample);
         if (delete > 0) {
-            log.debug("该员工已被移除");
+            Remove remove=new Remove();
+            remove.setId(employee.getId());
+            remove.setRmethod("离职");
+            remove.setRdate(new Date());
+            removeMapper.insert(remove);
         } else {
             log.debug("未移除指定员工");
         }

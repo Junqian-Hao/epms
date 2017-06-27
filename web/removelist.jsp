@@ -14,14 +14,20 @@
 </head>
 <body>
     <table>
+        <tr>
+            <td align="center">调动编号</td>
+            <td align="center">员工编号</td>
+            <td align="center">调动类型</td>
+            <td align="center">调动日期</td>
+        </tr>
+<c:forEach var="remove" items="${removelist}">
         <tr align="center">
-            <c:forEach var="remove" items="${removelist}">
                 <td align="center">${remove.removeid}</td>
                 <td align="center">${remove.id}</td>
                 <td align="center">${remove.rmethod}</td>
                 <td align="center">${remove.rdate}</td>
-            </c:forEach>
         </tr>
+</c:forEach>
     </table>
 </body>
 </html>

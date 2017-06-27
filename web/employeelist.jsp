@@ -48,10 +48,11 @@
         <td>${employee.contractexpirationdate}</td>
         <td>${employee.contractcontents}</td>
         <td align="center"><a href="../updateemployee.jsp?id=${employee.id}&eno=${employee.eno}&name=${employee.name}&sex=${employee.sex}&birth=${employee.birth}&nation=${employee.nation}&education=${employee.education}&duty=${employee.duty}&domicileplace=${employee.domicileplace}&politics=${employee.politics}&physiological=${employee.physiological}&contractsigningdate=${employee.contractsigningdate}&contractexpirationdate=${employee.contractexpirationdate}&contractcontents=${employee.contractcontents}">修改</a></td>
+        <td align="center"><a href="deleteEmployee.action?id=${employee.id}">删除</a></td
     </tr>
     </c:forEach>
 </table>
-    <a href="insertemployee.jsp">录入</a>
+    <a href="../insertemployee.jsp">录入</a>
 
 </body>
 </html>
