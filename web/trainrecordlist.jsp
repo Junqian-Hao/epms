@@ -14,13 +14,22 @@
 <body>
 <table>
     <p>培训记录信息</p>
-    <c:forEach items="${trainrecordlist}" var="trl">
+    
+        <c:forEach items="${trainlist}" var="tl">
+        <c:forEach items="${trainrecordlist}" var="trl">
+        <c:forEach items="${employeelist}" var="el">
+            <c:if test="${trl.id=el.id and trl.trainid=tl.trainid}">
         <tr>
-            <td>${trl.trainid}</td>
             <td>${trl.id}</td>
+            <td>${trl.trainid}</td>
+            <td>${tl.tstarttime}</td>
+            <td>${tl.tendtime}</td>
+                    
         </tr>
+            </c:if>
     </c:forEach>
-
+    </c:forEach>
+    </c:forEach>
 </table>
 </body>
 </html>

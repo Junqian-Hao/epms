@@ -97,7 +97,7 @@ public class EmployeeController {
                 response.sendRedirect("employeelist.action");
             }
             else {
-                String method = "原职位："+employee.getDuty()+"->新职位："+employee.getDuty();
+                String method = "原职位："+employee1.getDuty()+"->新职位："+employee.getDuty();
                 Remove remove=new Remove();
                 remove.setId(employee.getId());
                 remove.setRmethod(method);
@@ -108,6 +108,15 @@ public class EmployeeController {
             log.debug("员工资料修改失败");
         }
         response.sendRedirect("employeelist.action");
+    }
+
+    @RequestMapping("updatetra")
+    public void updatetra(HttpServletRequest request,HttpServletResponse response,Employee employee) throws Exception{
+        log.debug("修改");
+        Employee employee1=employeeMapper.selectByPrimaryKey(employee.getId());
+        request.setAttribute("employee1",employee1);
+
+        request.getRequestDispatcher("../updateemployee.jsp").forward(request,response);
     }
 
     @RequestMapping("test")

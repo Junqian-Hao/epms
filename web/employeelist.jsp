@@ -13,11 +13,12 @@
     <title>员工管理界面</title>
 </head>
 <body>
+
 <p>员工管理。</p>
 <table border="10" color="#00bfff">
     <tr>
         <td align="center">员工编号</td>
-        <td align="center">员工号</td>
+        <td align="center">部门号</td>
         <td align="center">姓名</td>
         <td align="center">性别</td>
         <td align="center">出生日期</td>
@@ -48,8 +49,8 @@
         <td><fmt:formatDate value="${employee.contractsigningdate}" pattern="yyyy-MM-dd"/></td>
         <td><fmt:formatDate value="${employee.contractexpirationdate}" pattern="yyyy-MM-dd"/></td>
         <td>${employee.contractcontents}</td>
-        <td align="center"><a href="../updateemployee.jsp?id=${employee.id}&eno=${employee.eno}&name=${employee.name}&sex=${employee.sex}&birth=<fmt:formatDate value="${employee.birth}" pattern="yyyy-MM-dd"/>}&nation=${employee.nation}&education=${employee.education}&duty=${employee.duty}&domicileplace=${employee.domicileplace}&politics=${employee.politics}&physiological=${employee.physiological}&contractsigningdate=<fmt:formatDate value="${employee.contractsigningdate}" pattern="yyyy-MM-dd"/>&contractexpirationdate=<fmt:formatDate value="${employee.contractexpirationdate}" pattern="yyyy-MM-dd"/>&contractcontents=${employee.contractcontents}">修改</a></td>
-        <td align="center"><a href="deleteEmployee.action?id=${employee.id}">删除</a></td
+        <td align="center"><a href="updatetra.action?id=${employee.id}">修改</a> </td>
+        <td align="center"><a href="deleteEmployee.action?id=${employee.id}">删除</a></td>
     </tr>
     </c:forEach>
 </table>

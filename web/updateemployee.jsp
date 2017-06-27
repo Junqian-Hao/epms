@@ -5,6 +5,7 @@
   Time: 下午12:09
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,22 +13,22 @@
 </head>
 <body>
 
-    <form method="post" action="EmployeeController/updateEmployee.action">
+    <form method="post" action="updateEmployee.action">
             <ul>
-                <li>ID：${employee.id} <input type="hidden" name="id" value="<%=request.getParameter("id")%>"></li>
-                <li> <input type="text" name="eno" value="<%=request.getParameter("eno")%>"></li>
-                <li> <input type="text" name="name" value="<%=request.getParameter("name")%>"></li>
-                <li> <input type="text" name="sex" value="<%=request.getParameter("sex")%>"></li>
-                <li> <input type="date" name="birth" value="<%=request.getParameter("birth")%>"></li>
-                <li> <input type="text" name="nation" value="<%=request.getParameter("nation")%>"></li>
-                <li> <input type="text" name="education" value="<%=request.getParameter("education")%>"></li>
-                <li> <input type="text" name="duty" value="<%=request.getParameter("duty")%>"></li>
-                <li> <input type="text" name="domicileplace" value="<%=request.getParameter("domicileplace")%>"></li>
-                <li> <input type="text" name="politics" value="<%=request.getParameter("politics")%>"></li>
-                <li> <input type="text" name="physiological" value="<%=request.getParameter("physiological")%>"></li>
-                <li> <input type="date" name="contractsigningdate" value="<%=request.getParameter("contractsigningdate")%>"></li>
-                <li> <input type="date" name="contractexpirationdate" value="<%=request.getParameter("contractexpirationdate")%>"></li>
-                <li> <input type="text" name="contractcontents" value="<%=request.getParameter("contractcontents")%>"></li>
+                <li>员工编号：${employee.id} <input type="hidden" name="id" value="${employee1.id}"></li>
+                <li>部门号： <input type="text" name="eno" value="${employee1.eno}"></li>
+                <li>姓名： <input type="text" name="name" value="${employee1.name}"></li>
+                <li>性别： <input type="text" name="sex" value="${employee1.sex}"></li>
+                <li>出生日期： <input type="date" name="birth" value="<fmt:formatDate value="${employee1.birth}" pattern="yyyy-MM-dd"/>"></li>
+                <li>民族： <input type="text" name="nation" value="${employee1.nation}"></li>
+                <li>教育程度： <input type="text" name="education" value="${employee1.education}"></li>
+                <li>职位： <input type="text" name="duty" value="${employee1.duty}"></li>
+                <li>户口所在地： <input type="text" name="domicileplace" value="${employee1.domicileplace}"></li>
+                <li>政治面貌： <input type="text" name="politics" value="${employee1.politics}"></li>
+                <li>健康状况： <input type="text" name="physiological" value="${employee1.physiological}"></li>
+                <li>合同签署日期： <input type="date" name="contractsigningdate" value="<fmt:formatDate value="${employee1.contractsigningdate}" pattern="yyyy-MM-dd"/>"></li>
+                <li>合同截止日期： <input type="date" name="contractexpirationdate" value="<fmt:formatDate value="${employee1.contractexpirationdate}" pattern="yyyy-MM-dd"/>"></li>
+                <li>合同内容： <input type="text" name="contractcontents" value="${employee1.contractcontents}"></li>
             </ul>
             <input type="submit" value="录入">
         </form>
