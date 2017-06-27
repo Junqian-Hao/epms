@@ -40,7 +40,7 @@ public class TrainrecordController {
             log.debug("插入记录失败");
         }
 
-        response.sendRedirect("trainlist.action");
+        response.sendRedirect("trainrecordlist.action");
     }
     @RequestMapping("trainrecordlist")
     public void trainrecordlist(HttpServletResponse response,HttpServletRequest request)throws Exception{
