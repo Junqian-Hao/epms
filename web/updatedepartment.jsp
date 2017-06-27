@@ -11,14 +11,11 @@
     <title>修改部门信息</title>
 </head>
 <body>
-<jsp:useBean id="department" class="cn.edu.nuc.epms.entity.Department" scope="page">
-    <jsp:setProperty name="department" property="*"/>
     <form method="post" action="DepartmentController/update.action">
-        部门编号:<input type="number" name="eno" value="${attendance.eno}"><br>
-        部门名称:<input type="text" name="dname" value="${attendance.dname}"><br>
-        负责人工号:<input type="number" name="eid" value="${attendance.eid}"><br>
+        部门编号:<input type="number" name="eno" value="<%=request.getParameter("eno")%>"><br>
+        部门名称:<input type="text" name="dname" value="<%=request.getParameter("dname")%>"><br>
+        负责人工号:<input type="number" name="eid" value="<%=request.getParameter("eid")%>"><br>
         <input type="submit">
     </form>
-</jsp:useBean>
 </body>
 </html>

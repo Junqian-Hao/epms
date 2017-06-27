@@ -44,6 +44,6 @@
         <property name="basePackage" value="cn.edu.nuc.epms.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
-<!--    &lt;!&ndash;全局异常处理&ndash;&gt;
-    <bean id="exceptionHandler" class="cn.edu.nuc.epms.intercepts.AllExceptionResolver"/>-->
+    <!--全局异常处理-->
+    <bean id="exceptionHandler" class="cn.edu.nuc.epms.intercepts.AllExceptionResolver"/>
 </beans>

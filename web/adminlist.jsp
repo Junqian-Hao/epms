@@ -27,7 +27,7 @@
                 <td align="center">系统管理员</td>
             </c:if>
             <c:if test="${rprecord.type==1}">
-                <td align="center">财务管理</td>
+                <td align="center">纪律管理</td>
             </c:if>
             <c:if test="${rprecord.type==2}">
                 <td align="center">人事管理</td>

@@ -22,17 +22,12 @@
     加班:<input type="radio" name="isovertime" value="1">
     <input type="button" onclick="form1.action='/epms/AttendanceController/statWork.action';form1.submit();" value="签到">
     <input type="button" onclick="form1.action='/epms/AttendanceController/endWork.action';form1.submit();" value="签退"><br>
+    <input type="button" onclick="form1.action='/epms/AttendanceController/selectById.action';form1.submit();" value="查询签到记录"><br>
+    <input type="button" onclick="form1.action='/epms/BusinesstripController/selectById.action';form1.submit();" value="查询出差任务"><br>
+    <input type="button" onclick="form1.action='/epms/RprecordController/selectById.action';form1.submit();" value="查询奖惩记录"><br>
+
     <span>${message}</span>
 </form>
-查询签到记录: <br>
-<form method="post" action="/epms/AttendanceController/selectById.action">
-    员工编号:<input type="number" name="id">
-    <input type="submit">
-</form>
-查询出差任务:
-<form method="post" action="/epms/BusinesstripController/selectById.action">
-    员工编号:<input type="number" name="id">
-    <input type="submit">
-</form>
+<a href="/epms/login.jsp">管理员登录</a>
 </body>
 </html>
