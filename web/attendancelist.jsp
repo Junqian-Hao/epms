@@ -27,17 +27,17 @@
         <td align="center">签退时间</td>
         <td align="center">是否为加班记录</td>
     </tr>
-    <c:forEach items="${attendancelist}" var="businesstrip" varStatus="vs">
+    <c:forEach items="${attendancelist}" var="rprecord" varStatus="vs">
         <tr>
             <td align="center">${vs.index+1}</td>
-            <td align="center">${businesstrip.id}</td>
-            <td align="center"><fmt:formatDate value="${businesstrip.attdate}" pattern="yyyy-MM-dd"/></td>
-            <td align="center"><fmt:formatDate value="${businesstrip.workhours}" pattern="hh:mm:ss"/></td>
-            <td align="center"><fmt:formatDate value="${businesstrip.closingtime}" pattern="hh:mm:ss"/></td>
-            <c:if test="${businesstrip.isovertime==0}">
+            <td align="center">${rprecord.id}</td>
+            <td align="center"><fmt:formatDate value="${rprecord.attdate}" pattern="yyyy-MM-dd"/></td>
+            <td align="center"><fmt:formatDate value="${rprecord.workhours}" pattern="hh:mm:ss"/></td>
+            <td align="center"><fmt:formatDate value="${rprecord.closingtime}" pattern="hh:mm:ss"/></td>
+            <c:if test="${rprecord.isovertime==0}">
             <td align="center">否</td>
             </c:if>
-            <c:if test="${businesstrip.isovertime==1}">
+            <c:if test="${rprecord.isovertime==1}">
                 <td align="center">是</td>
             </c:if>
         </tr>

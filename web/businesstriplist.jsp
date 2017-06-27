@@ -27,14 +27,14 @@
         <td align="center">报到</td>
 
     </tr>
-    <c:forEach items="${businesstriplist}" var="businesstrip" varStatus="vs">
+    <c:forEach items="${businesstriplist}" var="rprecord" varStatus="vs">
         <tr>
             <td align="center">${vs.index+1}</td>
-            <td align="center">${businesstrip.id}</td>
-            <td align="center"><fmt:formatDate value="${businesstrip.btdate}" pattern="yyyy-MM-dd"/></td>
-            <td align="center"><fmt:formatDate value="${businesstrip.registerdate}" pattern="yyyy-MM-dd"/></td>
-            <td align="center">${businesstrip.btmessage}</td>
-            <td align="center"><a href="/epms/BusinesstripController/registe.action?btid=${businesstrip.btid}">报道</a></td>
+            <td align="center">${rprecord.id}</td>
+            <td align="center"><fmt:formatDate value="${rprecord.btdate}" pattern="yyyy-MM-dd"/></td>
+            <td align="center"><fmt:formatDate value="${rprecord.registerdate}" pattern="yyyy-MM-dd"/></td>
+            <td align="center">${rprecord.btmessage}</td>
+            <td align="center"><a href="/epms/BusinesstripController/registe.action?btid=${rprecord.btid}">报道</a></td>
         </tr>
         <br>
     </c:forEach>

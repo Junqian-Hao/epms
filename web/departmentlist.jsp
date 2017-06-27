@@ -20,16 +20,16 @@
         <td align="center">领导人姓名</td>
         <td align="center" colspan="2">操作</td>
     </tr>
-    <c:forEach items="${departmentlist}" var="businesstrip" varStatus="vs">
+    <c:forEach items="${departmentlist}" var="rprecord" varStatus="vs">
         <tr>
-            <td align="center">${businesstrip.eno}</td>
-            <td align="center">${businesstrip.dname}</td>
-            <td align="center">${businesstrip.eid}</td>
-            <td align="center">${businesstrip.employee.name}</td>
+            <td align="center">${rprecord.eno}</td>
+            <td align="center">${rprecord.dname}</td>
+            <td align="center">${rprecord.eid}</td>
+            <td align="center">${rprecord.employee.name}</td>
             <td align="center"><a
-                    href="../updatedepartment.jsp?eno=${businesstrip.eno}&dname=${businesstrip.dname}&eid=${businesstrip.eid}">修改</a>
+                    href="../updatedepartment.jsp?eno=${rprecord.eno}&dname=${rprecord.dname}&eid=${rprecord.eid}">修改</a>
             </td>
-            <td align="center"><a href="delete.action?eno=${businesstrip.eno}">删除</a></td>
+            <td align="center"><a href="delete.action?eno=${rprecord.eno}">删除</a></td>
         </tr>
         <br>
     </c:forEach>

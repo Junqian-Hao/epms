@@ -19,23 +19,23 @@
         <td align="center">类型</td>
         <td align="center" colspan="2">操作</td>
     </tr>
-    <c:forEach items="${adminlist}" var="businesstrip" varStatus="vs">
+    <c:forEach items="${adminlist}" var="rprecord" varStatus="vs">
         <tr>
-            <td align="center">${businesstrip.adminid}</td>
-            <td align="center">${businesstrip.password}</td>
-            <c:if test="${businesstrip.type==0}">
+            <td align="center">${rprecord.adminid}</td>
+            <td align="center">${rprecord.password}</td>
+            <c:if test="${rprecord.type==0}">
                 <td align="center">系统管理员</td>
             </c:if>
-            <c:if test="${businesstrip.type==1}">
+            <c:if test="${rprecord.type==1}">
                 <td align="center">财务管理</td>
             </c:if>
-            <c:if test="${businesstrip.type==2}">
+            <c:if test="${rprecord.type==2}">
                 <td align="center">人事管理</td>
             </c:if>
             <td align="center"><a
-                    href="../updateadmin.jsp?adminid=${businesstrip.adminid}&password=${businesstrip.password}&type=${businesstrip.type}">修改</a>
+                    href="../updateadmin.jsp?adminid=${rprecord.adminid}&password=${rprecord.password}&type=${rprecord.type}">修改</a>
             </td>
-            <td align="center"><a href="deleteAdministrator.action?adminid=${businesstrip.adminid} ">删除</a></td>
+            <td align="center"><a href="deleteAdministrator.action?adminid=${rprecord.adminid} ">删除</a></td>
         </tr>
         <br>
     </c:forEach>

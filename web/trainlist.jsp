@@ -36,7 +36,7 @@
        <a href="../inserttrain.jsp">新建培训项目</a>
         <a href="../trainrecordlist.jsp">查看培训记录</a>
         <br><br><br><br>
-    <form action="TrainrecordController/inserttrainrecord.action" method="post">
+    <form action="/epms/TrainrecordController/inserttrainrecord.action" method="post">
         员工ID:<input type="number" name="id" > <br>
         所选培训项目编号:<input type="text" name="trainid">
         <input type="submit" value="提交培训信息">
