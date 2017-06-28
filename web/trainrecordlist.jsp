@@ -22,6 +22,7 @@
     </style>
 </head>
 <body>
+<div align="center">
 <table>
     <p>培训记录信息</p>
     <tr>
@@ -41,6 +42,8 @@
                     
         </tr>
     </c:forEach>
+
 </table>
+</div>
 </body>
 </html>
