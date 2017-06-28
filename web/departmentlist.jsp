@@ -15,6 +15,15 @@
             text-align: center
         }
     </style>
+    <style type="text/css">
+        body{
+            background:url("/epms/img/hua.jpg");
+            background-repeat:no-repeat ;
+            background-size:100% 100%;
+            background-attachment:fixed;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <br><br><br><br><p align="center" style="font-size: large">----部门信息----</p>

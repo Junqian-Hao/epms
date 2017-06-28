@@ -12,6 +12,15 @@
 <html>
 <head>
     <title>调动记录</title>
+    <style type="text/css">
+        body{
+            background:url("/epms/img/hua.jpg");
+            background-repeat:no-repeat ;
+            background-size:100% 100%;
+            background-attachment:fixed;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <table>
