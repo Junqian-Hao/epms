@@ -12,13 +12,20 @@
 <html>
 <head>
     <title>考勤记录</title>
+    <style type="text/css">
+        body{
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
-<form method="post" action="/epms/AttendanceController/selectById.action">
+
+<br><div align="center"><form method="post" action="/epms/AttendanceController/selectById.action">
     员工编号:<input type="number" name="id">
     <input type="submit">
 </form>
-<table>
+</div>
+<table align="center">
     <tr>
         <td align="center">记录编号</td>
         <td align="center">员工号</td>

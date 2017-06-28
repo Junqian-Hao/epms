@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>员工培训记录</title>
+
 </head>
 <body>
 <table>

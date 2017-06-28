@@ -11,13 +11,18 @@
 <html>
 <head>
     <title>奖惩记录</title>
+    <style type="text/css">
+        body{
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
-<form method="post" action="/epms/RprecordController/selectById.action">
+<div align="center"> <form method="post" action="/epms/RprecordController/selectById.action">
     员工编号:<input type="number" name="id">
     <input type="submit">
-</form>
-<table>
+</form></div>
+<table align="center">
     <tr>
         <td align="center">记录编号</td>
         <td align="center">员工号</td>
@@ -46,6 +51,6 @@
         <br>
     </c:forEach>
 </table>
-<a href="../insertrprecord.jsp">进行奖惩</a>
+<div align="center"><a href="../insertrprecord.jsp">进行奖惩</a></div>
 </body>
 </html>

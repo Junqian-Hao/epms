@@ -10,9 +10,14 @@
 <html>
 <head>
     <title>管理员账户管理</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<table>
+<table align="center">
     <tr>
         <td align="center">账号</td>
         <td align="center">密码</td>

@@ -9,16 +9,27 @@
 <html>
 <head>
     <title>欢迎</title>
+    <style type="text/css">
+    body {
+    text-align: center
+    }
+    .height{
+
+        align-content: center;
+        height: 200px;
+    </style>
 </head>
 <body>
-<a href="SupperAdminController/adminlist.action">管理员管理列表</a>
-<a href="DepartmentController/select.action">查看部门</a>
-<a href="EmployeeController/employeelist.action">员工信息表</a>
-<a href="RemoveController/removelist.action">员工调动记录</a>
-<a href="TrainController/trainlist.action">培训管理</a>
-<a href="AttendanceController/selectAll.action">查询签到记录</a>
-<a href="BusinesstripController/selectAll.action">出差管理</a>
+<div class="height">
+<a href="SupperAdminController/adminlist.action">管理员管理列表</a><br>
+<a href="DepartmentController/select.action">查看部门</a><br>
+<a href="EmployeeController/employeelist.action">员工信息表</a><br>
+<a href="RemoveController/removelist.action">员工调动记录</a><br>
+<a href="TrainController/trainlist.action">培训管理</a><br>
+<a href="AttendanceController/selectAll.action">查询签到记录</a><br>
+<a href="BusinesstripController/selectAll.action">出差管理</a><br>
 <a href="RprecordController/selectAll.action">进行奖惩</a>
+</div>
 
 </body>
 </html>

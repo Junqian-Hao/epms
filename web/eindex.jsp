@@ -9,14 +9,20 @@
 <html>
 <head>
     <style type="text/css">
+        .box1{
+            background:url("img/hua.jpg");
+        }
         span{
             color: red;
+        }
+        body {
+            text-align: center
         }
     </style>
     <title>员工操作界面</title>
 </head>
-<body>
-<form name="form1" method="post" >
+<body class="box1">
+<div align="center" ><form name="form1" method="post" >
     员工编号:<input type="number" name="id"><br>
     正常:<input type="radio" name="isovertime" value="0" checked>
     加班:<input type="radio" name="isovertime" value="1">
@@ -29,5 +35,6 @@
     <span>${message}</span>
 </form>
 <a href="/epms/login.jsp">管理员登录</a>
+</div>
 </body>
 </html>

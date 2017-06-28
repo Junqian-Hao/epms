@@ -11,13 +11,19 @@
 <html>
 <head>
     <title>出差记录</title>
+    <style type="text/css">
+        body{
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
-<form method="post" action="/epms/BusinesstripController/selectById.action">
+<br><div align="center"><form method="post" action="/epms/BusinesstripController/selectById.action">
     员工编号:<input type="number" name="id">
     <input type="submit">
 </form>
-<table>
+    </div>
+<table align="center">
     <tr>
         <td align="center">记录编号</td>
         <td align="center">员工号</td>
@@ -39,6 +45,6 @@
         <br>
     </c:forEach>
 </table>
-<a href="../insertbusinesstrip.jsp">外派出差</a>
+<div align="center"> <a href="../insertbusinesstrip.jsp">外派出差</a> </div>
 </body>
 </html>

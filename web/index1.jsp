@@ -9,8 +9,17 @@
 <html>
 <head>
     <title>纪律管理</title>
+    <style type="text/css">
+        body {
+            text-align: center
+        }
+        .height{
+
+            align-content: center;
+            height: 200px;
+    </style>
 </head>
-<body>
+<body class="height">
 <a href="AttendanceController/selectAll.action">查询签到记录</a>
 <a href="BusinesstripController/selectAll.action">出差管理</a>
 <a href="RprecordController/selectAll.action">进行奖惩</a>

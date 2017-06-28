@@ -14,10 +14,7 @@
 </head>
 <body>
 <%
-
     String trainid = request.getParameter("trainid");
-
-
 %>
 
 <p>培训信息修改</p>

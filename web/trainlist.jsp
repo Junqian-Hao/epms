@@ -33,15 +33,21 @@
     </tr>
     </c:forEach>
 </table>
-       <a href="../inserttrain.jsp">新建培训项目</a>
-        <a href="/epms/TrainrecordController/trainrecordlist.action">查看培训记录</a>
+<p align="center"><a href="../inserttrain.jsp">新建培训项目</a></p>
+      <p align="center">  <a href="/epms/TrainrecordController/trainrecordlist.action">查看培训记录</a></p>
         <br><br><br><br>
 
-<form action="/epms/TrainrecordController/inserttrainrecord.action" method="post">
+  <div align="center">
+     <table width="5"> <tr>
+          <p>[-----------------申请所需培训-----------------]</p>
+         </tr>
+     </table><br>
+      <form action="/epms/TrainrecordController/inserttrainrecord.action" method="post">
         员工ID:<input type="number" name="id" >
         所选培训项目编号:<input type="text" name="trainid">
         <input type="submit" value="提交培训信息">
     </form>
+  </div>
 
 </body>
 </html>

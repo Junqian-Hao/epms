@@ -11,10 +11,37 @@
 <html>
 <head>
     <title>员工管理界面</title>
+    <style type="text/css">
+    .myButton {
+        position: absolute;
+        right: 0px;
+    background-color:#44c767;
+    -moz-border-radius:31px;
+    -webkit-border-radius:31px;
+    border-radius:31px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:18px 42px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    }
+    .myButton:hover {
+    background-color:#5cbf2a;
+    }
+    .myButton:active {
+    position:relative;
+    top:1px;
+    }
+    </style>
+
 </head>
 <body>
 
-<p>员工管理。</p>
+<p align="center" style="font-size: large">员工管理</p>
 <table border="10" color="#00bfff">
     <tr>
         <td align="center">员工编号</td>
@@ -54,7 +81,7 @@
     </tr>
     </c:forEach>
 </table>
-    <a href="../insertemployee.jsp">录入</a>
+<a  href="../insertemployee.jsp"><p class="myButton">录入</p></a>
 
 </body>
 </html>

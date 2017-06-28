@@ -10,9 +10,15 @@
 <html>
 <head>
     <title>部门信息</title>
+    <style type="text/css">
+        body {
+            text-align: center
+        }
+    </style>
 </head>
 <body>
-<table>
+<br><br><br><br><p align="center" style="font-size: large">----部门信息----</p>
+<table align="center">
     <tr>
         <td align="center">部门编号</td>
         <td align="center">部门名称</td>

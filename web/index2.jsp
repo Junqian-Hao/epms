@@ -9,8 +9,17 @@
 <html>
 <head>
     <title>人事管理</title>
+    <style type="text/css">
+        body {
+            text-align: center
+        }
+        .height{
+
+            align-content: center;
+            height: 200px;
+    </style>
 </head>
-<body>
+<body class="height">
 <a href="DepartmentController/select.action">查看部门</a>
 <a href="EmployeeController/employeelist.action">员工信息表</a>
 <a href="RemoveController/removelist.action">员工调动记录</a>
