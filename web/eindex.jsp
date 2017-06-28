@@ -15,9 +15,15 @@
             background-size:100% 100%;
             background-attachment:fixed;
             text-align: center;
+
         }
         span{
             color: red;
+        }
+        .right{
+            position: absolute;
+            right: 400px;
+            align-content: center;
         }
     </style>
     <title>员工操作界面</title>
@@ -33,7 +39,10 @@
 <br>
 <br>
 <br>
-<div align="center" ><form name="form1" method="post" >
+<br>
+<br>
+<br>
+<div class="right" ><form name="form1" method="post" >
     员工编号:<input type="number" name="id"><br>
     正常:<input type="radio" name="isovertime" value="0" checked>
     加班:<input type="radio" name="isovertime" value="1">

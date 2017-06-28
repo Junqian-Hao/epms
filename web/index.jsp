@@ -15,9 +15,11 @@
         }
 
         .height {
-
+            margin-top: 200px;
             align-content: center;
             height: 200px;
+            position: absolute;
+            right: 400px;
         }    </style>
     <style type="text/css">
         body{
@@ -31,6 +33,7 @@
 </head>
 <body>
 <div class="height">
+    <p style="color: coral">-------超级管理员-------</p><br>
     <a href="SupperAdminController/adminlist.action">管理员管理列表</a><br>
     <a href="DepartmentController/select.action">查看部门</a><br>
     <a href="EmployeeController/employeelist.action">员工信息表</a><br>

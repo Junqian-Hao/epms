@@ -14,9 +14,11 @@
             text-align: center
         }
         .height {
-
+            margin-top: 200px;
             align-content: center;
             height: 200px;
+            position: absolute;
+            right: 400px;
         }
     </style>
     <style type="text/css">
@@ -30,6 +32,7 @@
     </style>
 </head>
 <body class="height">
+<p style="color: blueviolet">-----纪律管理-----</p>
 <a href="AttendanceController/selectAll.action">查询签到记录</a>
 <a href="BusinesstripController/selectAll.action">出差管理</a>
 <a href="RprecordController/selectAll.action">进行奖惩</a>

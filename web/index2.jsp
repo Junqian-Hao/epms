@@ -14,9 +14,11 @@
             text-align: center
         }
         .height {
-
+            margin-top: 200px;
             align-content: center;
             height: 200px;
+            position: absolute;
+            right: 400px;
         }
     </style>
     <style type="text/css">
@@ -30,6 +32,7 @@
     </style>
 </head>
 <body class="height">
+<p style="color: deeppink">------人事管理员------</p>
 <a href="DepartmentController/select.action">查看部门</a>
 <a href="EmployeeController/employeelist.action">员工信息表</a>
 <a href="RemoveController/removelist.action">员工调动记录</a>
